@@ -6,9 +6,9 @@ redirect_from:
   - /github/automating-your-workflow-with-github-actions/checking-the-status-of-self-hosted-runners
   - /actions/automating-your-workflow-with-github-actions/checking-the-status-of-self-hosted-runners
 versions:
-  free-pro-team: '*'
-  enterprise-server: '>=2.22'
-  github-ae: '*'
+  fpt: '*'
+  ghes: '*'
+  ghae: '*'
 type: tutorial
 defaultPlatform: linux
 ---
@@ -23,8 +23,8 @@ defaultPlatform: linux
 {% data reusables.github-actions.self-hosted-runner-management-permissions-required %}
 
 {% data reusables.github-actions.self-hosted-runner-navigate-repo-and-org %}
-{% data reusables.organizations.settings-sidebar-actions %}
-1. "Self-hosted runners（セルフホストランナー）"の下で、ランナーの名前、ラベル、ステータスを含む、登録されたランナーのリストを見ることができます。
+{% data reusables.github-actions.settings-sidebar-actions-runners %}
+1. {% if currentVersion == "free-pro-team@latest" %}[Runners]{% else %}[Self-hosted runners]{% endif %} で、ランナーの名前、ラベル、ステータスなど、登録済みのランナーのリストを表示できます。
 
     ![ランナーのリスト](/assets/images/help/settings/actions-runner-list.png)
 

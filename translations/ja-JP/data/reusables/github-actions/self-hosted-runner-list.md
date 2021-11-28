@@ -1,1 +1,1 @@
- 1. "Self-hosted runners（セルフホストランナー）"の下で、ランナーのリストを見つけてください。
+ 1. {% ifversion fpt %}"Runners（ランナー）"{% else %}"Self-hosted runners（セルフホストランナー）"{% endif %}の下のランナーのリストを見つけてください。

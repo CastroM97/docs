@@ -2,13 +2,15 @@
 title: Using the latest version of the official bundled actions
 intro: 'You can update the actions that are bundled with your enterprise, or use actions directly from {% data variables.product.prodname_dotcom_the_website %}.'
 versions:
-  enterprise-server: '>=2.22'
-  github-ae: next
+  ghes: '*'
+  ghae: next
 topics:
   - Enterprise
 redirect_from:
   - /admin/github-actions/using-the-latest-version-of-the-official-bundled-actions
+shortTitle: Use the latest bundled actions
 ---
+
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
 {% data reusables.actions.ae-beta %}
@@ -17,17 +19,17 @@ Your enterprise instance includes a number of built-in actions that you can use 
 
 These bundled actions are a point-in-time snapshot of the official actions found at https://github.com/actions, so there may be newer versions of these actions available. You can use the `actions-sync` tool to update these actions, or you can configure {% data variables.product.prodname_github_connect %} to allow access to the latest actions on {% data variables.product.prodname_dotcom_the_website %}. These options are described in the following sections.
 
-### Using `actions-sync` to update the bundled actions
+## Using `actions-sync` to update the bundled actions
 
 To update the bundled actions, you can use the `actions-sync` tool to update the snapshot. For more information on using `actions-sync`, see "[Manually syncing actions from {% data variables.product.prodname_dotcom_the_website %}](/admin/github-actions/manually-syncing-actions-from-githubcom)."
 
-### Using {% data variables.product.prodname_github_connect %} to access the latest actions
+## Using {% data variables.product.prodname_github_connect %} to access the latest actions
 
 You can use {% data variables.product.prodname_github_connect %} to allow {% data variables.product.product_name %} to use actions from {% data variables.product.prodname_dotcom_the_website %}. 詳しい情報については、「[{% data variables.product.prodname_github_connect %} を使用した {% data variables.product.prodname_dotcom_the_website %} アクションへの自動アクセスを有効化する](/admin/github-actions/enabling-automatic-access-to-githubcom-actions-using-github-connect)」を参照してください。
 
 Once {% data variables.product.prodname_github_connect %} is configured, you can use the latest version of an action by deleting its local repository in the `actions` organization on your instance. For example, if your enterprise instance is using the `actions/checkout@v1` action, and you need to use `actions/checkout@v2` which isn't available on your enterprise instance, perform the following steps to be able to use the latest `checkout` action from {% data variables.product.prodname_dotcom_the_website %}:
 
-1. By default, site administrators are not owners of the bundled actions organization. To get the required access to delete the `checkout` repository, use the `ghe-org-admin-promote` command to promote a user to be an owner of the bundled `actions` organization. For more information, see "[Accessing the administrative shell (SSH)](/admin/configuration/accessing-the-administrative-shell-ssh)" and "[`ghe-org-admin-promote`](/admin/configuration/command-line-utilities#ghe-org-admin-promote)." 例:
+1. By default, site administrators are not owners of the bundled actions organization. To get the required access to delete the `checkout` repository, use the `ghe-org-admin-promote` command to promote a user to be an owner of the bundled `actions` organization. 詳しい情報については、「[管理シェル (SSH) へのアクセス](/admin/configuration/accessing-the-administrative-shell-ssh)」および「[`ghe-org-admin-promote`](/admin/configuration/command-line-utilities#ghe-org-admin-promote)」を参照してください。 例:
 
    ```shell
    $ ghe-org-admin-promote -u octocat -o actions
