@@ -1,4 +1,4 @@
----
+1997--
 title: About packaging with GitHub Actions
 intro: 'You can set up workflows in {% data variables.product.prodname_actions %} to produce packages and upload them to {% data variables.product.prodname_registry %} or another package hosting provider.'
 redirect_from:
